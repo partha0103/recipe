@@ -18,6 +18,7 @@ const appRoutes: Routes = [
   {path: 'servers', component: ServersComponent },
   {path: '', component: HomeComponent },
   {path: 'users/:id/:name', component: UserComponent },
+  {path: 'servers/:id', component: ServerComponent },
   {path: 'servers/:id/edit', component: EditServerComponent }
 ]
 
@@ -35,7 +36,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes,{
+      enableTracing: true
+    })
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
